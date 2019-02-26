@@ -1,0 +1,15 @@
+print "\\" # Backslash (\)
+print "\'" # Single- quote (')
+print '\"' # Double- quote (")
+print "\a" # ASCII bell (BEL)
+print "\b" # ASCII backspace (BS)
+print "\f"  # ASCII formfeed (FF)
+print "\n" # ASCII linefeed (LF)
+print u"\N{DAGGER}" # Character named DAGGER in the Unicode database (Unicode only)
+print "\r" # ASCII carriage return (CR)
+print "\t" # ASCII horizontal tab (TAB)
+print u"\u0062" # Character with 16-bit hex value 0062 (Unicode only)
+print u"\U000001a9" # Character with 32-bit hex value 000001a9 (Unicode only)
+print "\v" # ASCII vertical tab (VT)
+print "\043" # Character with octal value 043
+print "\x23" # Character with hex value 23
