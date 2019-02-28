@@ -4,7 +4,7 @@ def gold_room():
 	print "This room is full of gold. How much do you take?"
 
 	next = raw_input("> ")
-	if "0" in next or "1" in next:
+	if next.isdigit():
 		how_much = int(next)
 	else:
 		dead("Man, learn to type a number.")
@@ -29,7 +29,7 @@ def bear_room():
 		next = raw_input("> ")
 
 		if next == "take honey":
-			dead("The bear looks at you then slaps your face off.")
+			dead("The bear looks at you, then slaps your face off.")
 		elif next == "taunt bear" and not bear_moved:
 			print "The bear has moved from the door. You can go through it now."
 			bear_moved = True
@@ -38,7 +38,7 @@ def bear_room():
 		elif next == "open door" and bear_moved:
 			gold_room()
 		else:
-			print "I got no idea what that means."
+			print "Ha! Not that easy!"
 
 def cthulhu_room():
 	print "Here you see the great evil Cthulhu."
