@@ -81,6 +81,7 @@ def fibonacci(n):
         prev, curr = curr,prev+curr
 	counter += 1
 
+
 for i in fibonacci(25):
 	print i,
 	print " ",
@@ -111,3 +112,10 @@ def fibseq(n):
 
 fibseq(20)
 
+# None 
+variable = None
+print type(variable)
+if variable:
+	print True
+else:
+	print False
