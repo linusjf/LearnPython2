@@ -25,14 +25,16 @@ stops = {
          'of':'stop',
          'from':'stop',
          'at':'stop',
-         'it':'stop'
+         'it':'stop',
+         'through':'stop'
 }
 
 nouns = {
         'door':'noun',
          'bear':'noun',
          'princess':'noun',
-         'cabinet':'noun'
+         'cabinet':'noun',
+         'face':'noun'
 }
 
 def scan(stuff):

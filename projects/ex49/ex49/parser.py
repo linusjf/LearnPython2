@@ -10,7 +10,11 @@ class Sentence(object):
         self.subject = subject[1]
         self.verb = verb[1]
         self.object = object[1]
-
+        
+    def __eq__(self, other):
+        if other is None:
+            return False
+        return (self.subject == other.subject and self.verb == other.verb and self.object == other.object)
 
 def peek(word_list):
     if word_list:
@@ -21,8 +25,11 @@ def peek(word_list):
 
 
 def match(word_list, expecting):
+    print expecting
+
     if word_list:
         word = word_list.pop(0)
+        print word[0]
         if word[0] == expecting:
             return word
         else:
@@ -44,9 +51,10 @@ def parse_verb(word_list):
         raise ParserError("Expected a verb next.")
 
 def parse_object(word_list):
+    print word_list
     skip(word_list, 'stop')
     next = peek(word_list)
-
+    print word_list
     if next == 'noun':
         return match(word_list, 'noun')
     if next == 'direction':
