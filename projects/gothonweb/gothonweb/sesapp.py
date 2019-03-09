@@ -7,6 +7,8 @@ urls = (
 )
 
 app = web.application(urls, globals())
+web.config.debug = False
+
 # little hack so that debug mode works with sessions
 if web.config.get('_session') is None:
     store = web.session.DiskStore('sessions')
@@ -28,6 +30,9 @@ class Index(object):
 
 class GameEngine(object):
     def GET(self):
+        print 'session : %r' % session
+        print 'GET: session room ',
+        print session.room
         if session.room:
             return render.show_room(room=session.room)
         else:
@@ -36,7 +41,7 @@ class GameEngine(object):
 
     def POST(self):
         if session.room:
-            print 'Session room %r :' % session.room
+            print 'Session room %r :' % session.room.name
         
         form = web.input(action=None)
 
@@ -47,6 +52,10 @@ class GameEngine(object):
         if session.room and form.action:
             session.room = session.room.go(form.action)
 
+        if session.room <> None:
+            print 'Next room : %r' % session.room.name
+            print form.action
+        
         web.seeother("/game")
 
 if __name__ == "__main__":
