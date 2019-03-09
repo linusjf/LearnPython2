@@ -34,7 +34,9 @@ def invokeTheBridge():
     return invokePostGame(data={'action':'0132'})
 
 def invokeEscapePod():
-    invokeTheBridge()
+    resp = invokeTheBridge()
+    print 'invokeEscapePod : ',
+    print resp
     return invokePostGame(
             data={'action':'slowly place the bomb'})
 
@@ -81,7 +83,12 @@ def testEscapePod():
     resp = invokePostGame(data={'action':'2'})
     assertResponse(resp,status=200,contains=map.the_end_winner.name)
 
-
-def teardown_module():
-    pass
+def testEscapePodError():
+    resp = invokeEscapePod()                    
+    resp = invokePostGame(data={'action':'5'})
+    print 'url : %r' % resp.url
+    print 'testEscapePodError: ',
+    print resp
+    assertResponse(resp,status=200,
+            contains=map.the_end_loser.name)   
 
