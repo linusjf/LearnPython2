@@ -30,9 +30,6 @@ class Index(object):
 
 class GameEngine(object):
     def GET(self):
-        print 'session : %r' % session
-        print 'GET: session room ',
-        print session.room
         if session.room:
             return render.show_room(room=session.room)
         else:
@@ -40,22 +37,14 @@ class GameEngine(object):
             return render.you_died()
 
     def POST(self):
-        if session.room:
-            print 'Session room %r :' % session.room.name
         
         form = web.input(action=None)
 
-        if form.action:
-            print 'Form action %r :' % form.action
-
+    
 # there is a bug here, can you fix it?
         if session.room and form.action:
             session.room = session.room.go(form.action)
-
-        if session.room <> None:
-            print 'Next room : %r' % session.room.name
-            print form.action
-        
+    
         web.seeother("/game")
 
 if __name__ == "__main__":

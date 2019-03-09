@@ -13,10 +13,6 @@ class Room(object):
                 '*' in self.paths):
                     next = self.paths.get("*")
 
-                if next <> None:
-                    print 'Next %r ' % next.name
-                else:
-                    print 'Next is None'
                 return next
 
 	def add_paths(self, paths):

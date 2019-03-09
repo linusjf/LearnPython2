@@ -42,3 +42,28 @@ def test_gothon_game_map():
 
     room = START.go('*')
     assert_equal(room,None)
+
+    room = laser_weapon_armory.go("0132")
+    assert_equal(room,the_bridge)
+
+    room = laser_weapon_armory.go("*")
+    assert_equal(room,generic_death)
+
+    room = the_bridge.go("throw the bomb")
+    assert_equal(room,generic_death)
+
+    room = the_bridge.go("slowly place the bomb")
+    assert_equal(room,escape_pod)
+
+    room = the_bridge.go("*")
+    assert_equal(room,None)
+
+    room = escape_pod.go("2")
+    assert_equal(room,the_end_winner)
+
+    room = escape_pod.go("*")
+    assert_equal(room,the_end_loser)
+
+
+
+
