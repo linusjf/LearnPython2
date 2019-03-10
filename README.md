@@ -1,6 +1,6 @@
 # LearnPython2
 
-# Exercises basded on Zed Shaw's Learn Python The Hard Way
+# Exercises based on Zed Shaw's Learn Python The Hard Way
 
 ## Installation
 
