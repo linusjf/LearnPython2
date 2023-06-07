@@ -1,5 +1,7 @@
 # LearnPython2
 
+[![Hits-of-Code](https://hitsofcode.com/github/linusjf/LearnPython2?branch=main)](https://hitsofcode.com/github/linusjf/LearnPython2/view?branch=main)
+
 # Exercises based on Zed Shaw's Learn Python The Hard Way
 
 ## Installation

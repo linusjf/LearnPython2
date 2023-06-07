@@ -1,5 +1,4 @@
 *.pyc
 *.egg*
 *sessions*
-
-
+commit.txt
